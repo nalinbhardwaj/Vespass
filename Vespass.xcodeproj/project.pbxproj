@@ -1,0 +1,669 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C277DDCF22CFFC140036D004 /* KeyStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277DDCE22CFFC140036D004 /* KeyStoreError.swift */; };
+		C277DDD022CFFC140036D004 /* KeyStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C277DDCE22CFFC140036D004 /* KeyStoreError.swift */; };
+		C27E5C3122AEF3F400BCEC18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27E5C3022AEF3F400BCEC18 /* AppDelegate.swift */; };
+		C27E5C3322AEF3F400BCEC18 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27E5C3222AEF3F400BCEC18 /* SceneDelegate.swift */; };
+		C27E5C3522AEF3F400BCEC18 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27E5C3422AEF3F400BCEC18 /* ContentView.swift */; };
+		C27E5C3722AEF3F600BCEC18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C27E5C3622AEF3F600BCEC18 /* Assets.xcassets */; };
+		C27E5C3A22AEF3F600BCEC18 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C27E5C3922AEF3F600BCEC18 /* Preview Assets.xcassets */; };
+		C27E5C3D22AEF3F600BCEC18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C27E5C3B22AEF3F600BCEC18 /* LaunchScreen.storyboard */; };
+		C2B1204322B7FBC40061F305 /* GenericPasswordStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B1204222B7FBC40061F305 /* GenericPasswordStore.swift */; };
+		C2B1204422B7FBC40061F305 /* GenericPasswordStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B1204222B7FBC40061F305 /* GenericPasswordStore.swift */; };
+		C2B1204922B805720061F305 /* GenericPasswordConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B1204822B805720061F305 /* GenericPasswordConvertible.swift */; };
+		C2B1204A22B805720061F305 /* GenericPasswordConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B1204822B805720061F305 /* GenericPasswordConvertible.swift */; };
+		C2F5472722B2FFB4000472DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F5472622B2FFB4000472DE /* AppDelegate.swift */; };
+		C2F5472B22B2FFB8000472DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2F5472A22B2FFB8000472DE /* Assets.xcassets */; };
+		C2F5472E22B2FFB8000472DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2F5472D22B2FFB8000472DE /* Preview Assets.xcassets */; };
+		C2F5473122B2FFB9000472DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2F5472F22B2FFB9000472DE /* Main.storyboard */; };
+		C2F5473722B300A4000472DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27E5C3422AEF3F400BCEC18 /* ContentView.swift */; };
+		C2F5473F22B413A1000472DE /* KeyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F5473E22B413A1000472DE /* KeyTest.swift */; };
+		C2F5474022B413A1000472DE /* KeyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F5473E22B413A1000472DE /* KeyTest.swift */; };
+		F2EB54F02952F4AE001653B4 /* NalinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB54EF2952F4AE001653B4 /* NalinView.swift */; };
+		F2EB54F12952F4AE001653B4 /* NalinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB54EF2952F4AE001653B4 /* NalinView.swift */; };
+		F2EB54F92955624B001653B4 /* SecretSharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB54F82955624B001653B4 /* SecretSharing.swift */; };
+		F2EB54FA2955624B001653B4 /* SecretSharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB54F82955624B001653B4 /* SecretSharing.swift */; };
+		F2EB550229556466001653B4 /* BigInt in Frameworks */ = {isa = PBXBuildFile; productRef = F2EB550129556466001653B4 /* BigInt */; };
+		F2EB550429556475001653B4 /* BigInt in Frameworks */ = {isa = PBXBuildFile; productRef = F2EB550329556475001653B4 /* BigInt */; };
+		F2EB550629558A91001653B4 /* SimpleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB550529558A91001653B4 /* SimpleStore.swift */; };
+		F2EB550729558A91001653B4 /* SimpleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB550529558A91001653B4 /* SimpleStore.swift */; };
+		F2EB550929558FA9001653B4 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB550829558FA9001653B4 /* KeychainStore.swift */; };
+		F2EB550A29558FA9001653B4 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB550829558FA9001653B4 /* KeychainStore.swift */; };
+		F2EB550D2956A725001653B4 /* EncryptionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB550C2956A725001653B4 /* EncryptionHelpers.swift */; };
+		F2EB550E2956A725001653B4 /* EncryptionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB550C2956A725001653B4 /* EncryptionHelpers.swift */; };
+		F2EB55102956A82A001653B4 /* DeviceKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB550F2956A82A001653B4 /* DeviceKeyManager.swift */; };
+		F2EB55112956A82A001653B4 /* DeviceKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB550F2956A82A001653B4 /* DeviceKeyManager.swift */; };
+		F2EB55132956C172001653B4 /* CloudkitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB55122956C172001653B4 /* CloudkitManager.swift */; };
+		F2EB55142956C172001653B4 /* CloudkitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB55122956C172001653B4 /* CloudkitManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3EC7E4E03EC7E17000000001 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		C277DDCE22CFFC140036D004 /* KeyStoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyStoreError.swift; sourceTree = "<group>"; };
+		C27E5C2D22AEF3F400BCEC18 /* Vespass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vespass.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C27E5C3022AEF3F400BCEC18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C27E5C3222AEF3F400BCEC18 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C27E5C3422AEF3F400BCEC18 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C27E5C3622AEF3F600BCEC18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C27E5C3922AEF3F600BCEC18 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C27E5C3C22AEF3F600BCEC18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C27E5C3E22AEF3F600BCEC18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2B1203B22B58F420061F305 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C2B1204222B7FBC40061F305 /* GenericPasswordStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPasswordStore.swift; sourceTree = "<group>"; };
+		C2B1204822B805720061F305 /* GenericPasswordConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPasswordConvertible.swift; sourceTree = "<group>"; };
+		C2F5472422B2FFB4000472DE /* VespassMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VespassMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2F5472622B2FFB4000472DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C2F5472A22B2FFB8000472DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C2F5472D22B2FFB8000472DE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C2F5473022B2FFB9000472DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C2F5473222B2FFB9000472DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2F5473322B2FFB9000472DE /* VespassMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VespassMac.entitlements; sourceTree = "<group>"; };
+		C2F5473E22B413A1000472DE /* KeyTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyTest.swift; sourceTree = "<group>"; };
+		F2EB54EF2952F4AE001653B4 /* NalinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NalinView.swift; sourceTree = "<group>"; };
+		F2EB54F82955624B001653B4 /* SecretSharing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretSharing.swift; sourceTree = "<group>"; };
+		F2EB550529558A91001653B4 /* SimpleStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleStore.swift; sourceTree = "<group>"; };
+		F2EB550829558FA9001653B4 /* KeychainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStore.swift; sourceTree = "<group>"; };
+		F2EB550B2955A0EC001653B4 /* VespassiOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VespassiOS.entitlements; sourceTree = "<group>"; };
+		F2EB550C2956A725001653B4 /* EncryptionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionHelpers.swift; sourceTree = "<group>"; };
+		F2EB550F2956A82A001653B4 /* DeviceKeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceKeyManager.swift; sourceTree = "<group>"; };
+		F2EB55122956C172001653B4 /* CloudkitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudkitManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C27E5C2A22AEF3F400BCEC18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2EB550429556475001653B4 /* BigInt in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2F5472122B2FFB4000472DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2EB550229556466001653B4 /* BigInt in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3EC7DC803EC7BEC000000001 /* LICENSE */ = {
+			isa = PBXGroup;
+			children = (
+				3EC7E4E03EC7E17000000001 /* LICENSE.txt */,
+			);
+			path = LICENSE;
+			sourceTree = "<group>";
+		};
+		C27E5C2422AEF3F400BCEC18 = {
+			isa = PBXGroup;
+			children = (
+				C2B1203B22B58F420061F305 /* README.md */,
+				C2F5473D22B3F8A0000472DE /* Storage */,
+				C2B1204B22B80B540061F305 /* Testing */,
+				C2F5473C22B3F894000472DE /* Views */,
+				C27E5C2F22AEF3F400BCEC18 /* VespassiOS */,
+				C2F5472522B2FFB4000472DE /* VespassMac */,
+				C27E5C2E22AEF3F400BCEC18 /* Products */,
+				3EC7DC803EC7BEC000000001 /* LICENSE */,
+				F2EB54FE2955644C001653B4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C27E5C2E22AEF3F400BCEC18 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C27E5C2D22AEF3F400BCEC18 /* Vespass.app */,
+				C2F5472422B2FFB4000472DE /* VespassMac.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C27E5C2F22AEF3F400BCEC18 /* VespassiOS */ = {
+			isa = PBXGroup;
+			children = (
+				F2EB550B2955A0EC001653B4 /* VespassiOS.entitlements */,
+				C27E5C3022AEF3F400BCEC18 /* AppDelegate.swift */,
+				C27E5C3222AEF3F400BCEC18 /* SceneDelegate.swift */,
+				C27E5C3622AEF3F600BCEC18 /* Assets.xcassets */,
+				C27E5C3B22AEF3F600BCEC18 /* LaunchScreen.storyboard */,
+				C27E5C3E22AEF3F600BCEC18 /* Info.plist */,
+				C27E5C3822AEF3F600BCEC18 /* Preview Content */,
+			);
+			path = VespassiOS;
+			sourceTree = "<group>";
+		};
+		C27E5C3822AEF3F600BCEC18 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C27E5C3922AEF3F600BCEC18 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C2B1204B22B80B540061F305 /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				C2F5473E22B413A1000472DE /* KeyTest.swift */,
+				F2EB54F82955624B001653B4 /* SecretSharing.swift */,
+				F2EB550529558A91001653B4 /* SimpleStore.swift */,
+				F2EB550829558FA9001653B4 /* KeychainStore.swift */,
+				F2EB550C2956A725001653B4 /* EncryptionHelpers.swift */,
+				F2EB550F2956A82A001653B4 /* DeviceKeyManager.swift */,
+				F2EB55122956C172001653B4 /* CloudkitManager.swift */,
+			);
+			path = Testing;
+			sourceTree = "<group>";
+		};
+		C2F5472522B2FFB4000472DE /* VespassMac */ = {
+			isa = PBXGroup;
+			children = (
+				C2F5472622B2FFB4000472DE /* AppDelegate.swift */,
+				C2F5472A22B2FFB8000472DE /* Assets.xcassets */,
+				C2F5472F22B2FFB9000472DE /* Main.storyboard */,
+				C2F5473222B2FFB9000472DE /* Info.plist */,
+				C2F5473322B2FFB9000472DE /* VespassMac.entitlements */,
+				C2F5472C22B2FFB8000472DE /* Preview Content */,
+			);
+			path = VespassMac;
+			sourceTree = "<group>";
+		};
+		C2F5472C22B2FFB8000472DE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C2F5472D22B2FFB8000472DE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C2F5473C22B3F894000472DE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C27E5C3422AEF3F400BCEC18 /* ContentView.swift */,
+				F2EB54EF2952F4AE001653B4 /* NalinView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C2F5473D22B3F8A0000472DE /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				C2B1204822B805720061F305 /* GenericPasswordConvertible.swift */,
+				C2B1204222B7FBC40061F305 /* GenericPasswordStore.swift */,
+				C277DDCE22CFFC140036D004 /* KeyStoreError.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		F2EB54FE2955644C001653B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C27E5C2C22AEF3F400BCEC18 /* Vespass */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C27E5C4122AEF3F600BCEC18 /* Build configuration list for PBXNativeTarget "Vespass" */;
+			buildPhases = (
+				C27E5C2922AEF3F400BCEC18 /* Sources */,
+				C27E5C2A22AEF3F400BCEC18 /* Frameworks */,
+				C27E5C2B22AEF3F400BCEC18 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Vespass;
+			packageProductDependencies = (
+				F2EB550329556475001653B4 /* BigInt */,
+			);
+			productName = CryptoKitKeychain;
+			productReference = C27E5C2D22AEF3F400BCEC18 /* Vespass.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C2F5472322B2FFB4000472DE /* VespassMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2F5473622B2FFB9000472DE /* Build configuration list for PBXNativeTarget "VespassMac" */;
+			buildPhases = (
+				C2F5472022B2FFB4000472DE /* Sources */,
+				C2F5472122B2FFB4000472DE /* Frameworks */,
+				C2F5472222B2FFB4000472DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VespassMac;
+			packageProductDependencies = (
+				F2EB550129556466001653B4 /* BigInt */,
+			);
+			productName = CryptoKitKeychainMac;
+			productReference = C2F5472422B2FFB4000472DE /* VespassMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C27E5C2522AEF3F400BCEC18 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = Apple;
+				TargetAttributes = {
+					C27E5C2C22AEF3F400BCEC18 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					C2F5472322B2FFB4000472DE = {
+						CreatedOnToolsVersion = 11.0;
+					};
+				};
+			};
+			buildConfigurationList = C27E5C2822AEF3F400BCEC18 /* Build configuration list for PBXProject "Vespass" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C27E5C2422AEF3F400BCEC18;
+			packageReferences = (
+				F2EB54FB295562C2001653B4 /* XCRemoteSwiftPackageReference "BigInt" */,
+			);
+			productRefGroup = C27E5C2E22AEF3F400BCEC18 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C27E5C2C22AEF3F400BCEC18 /* Vespass */,
+				C2F5472322B2FFB4000472DE /* VespassMac */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C27E5C2B22AEF3F400BCEC18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C27E5C3D22AEF3F600BCEC18 /* LaunchScreen.storyboard in Resources */,
+				C27E5C3A22AEF3F600BCEC18 /* Preview Assets.xcassets in Resources */,
+				C27E5C3722AEF3F600BCEC18 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2F5472222B2FFB4000472DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2F5473122B2FFB9000472DE /* Main.storyboard in Resources */,
+				C2F5472E22B2FFB8000472DE /* Preview Assets.xcassets in Resources */,
+				C2F5472B22B2FFB8000472DE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C27E5C2922AEF3F400BCEC18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2EB550D2956A725001653B4 /* EncryptionHelpers.swift in Sources */,
+				F2EB54F92955624B001653B4 /* SecretSharing.swift in Sources */,
+				C27E5C3122AEF3F400BCEC18 /* AppDelegate.swift in Sources */,
+				F2EB54F02952F4AE001653B4 /* NalinView.swift in Sources */,
+				C2B1204322B7FBC40061F305 /* GenericPasswordStore.swift in Sources */,
+				C2B1204922B805720061F305 /* GenericPasswordConvertible.swift in Sources */,
+				F2EB550929558FA9001653B4 /* KeychainStore.swift in Sources */,
+				C27E5C3322AEF3F400BCEC18 /* SceneDelegate.swift in Sources */,
+				F2EB55102956A82A001653B4 /* DeviceKeyManager.swift in Sources */,
+				C27E5C3522AEF3F400BCEC18 /* ContentView.swift in Sources */,
+				C277DDCF22CFFC140036D004 /* KeyStoreError.swift in Sources */,
+				F2EB55132956C172001653B4 /* CloudkitManager.swift in Sources */,
+				F2EB550629558A91001653B4 /* SimpleStore.swift in Sources */,
+				C2F5473F22B413A1000472DE /* KeyTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2F5472022B2FFB4000472DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2EB550E2956A725001653B4 /* EncryptionHelpers.swift in Sources */,
+				C2B1204422B7FBC40061F305 /* GenericPasswordStore.swift in Sources */,
+				F2EB550729558A91001653B4 /* SimpleStore.swift in Sources */,
+				C2B1204A22B805720061F305 /* GenericPasswordConvertible.swift in Sources */,
+				C2F5472722B2FFB4000472DE /* AppDelegate.swift in Sources */,
+				C2F5473722B300A4000472DE /* ContentView.swift in Sources */,
+				F2EB55112956A82A001653B4 /* DeviceKeyManager.swift in Sources */,
+				F2EB54FA2955624B001653B4 /* SecretSharing.swift in Sources */,
+				C277DDD022CFFC140036D004 /* KeyStoreError.swift in Sources */,
+				C2F5474022B413A1000472DE /* KeyTest.swift in Sources */,
+				F2EB54F12952F4AE001653B4 /* NalinView.swift in Sources */,
+				F2EB55142956C172001653B4 /* CloudkitManager.swift in Sources */,
+				F2EB550A29558FA9001653B4 /* KeychainStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C27E5C3B22AEF3F600BCEC18 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C27E5C3C22AEF3F600BCEC18 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C2F5472F22B2FFB9000472DE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C2F5473022B2FFB9000472DE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C27E5C3F22AEF3F600BCEC18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C27E5C4022AEF3F600BCEC18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C27E5C4222AEF3F600BCEC18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VespassiOS/VespassiOS.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "VespassiOS/Preview\\ Content";
+				DEVELOPMENT_TEAM = GBVVFTJ5A2;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = VespassiOS/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Password Manager";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nibnalin.pwdmanager.version;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C27E5C4322AEF3F600BCEC18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VespassiOS/VespassiOS.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "VespassiOS/Preview\\ Content";
+				DEVELOPMENT_TEAM = GBVVFTJ5A2;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = VespassiOS/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Password Manager";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nibnalin.pwdmanager.version;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C2F5473422B2FFB9000472DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VespassMac/VespassMac.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "VespassMac/Preview\\ Content";
+				DEVELOPMENT_TEAM = GBVVFTJ5A2;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = VespassMac/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Password Manager";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nibnalin.pwdmanager.version;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C2F5473522B2FFB9000472DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VespassMac/VespassMac.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "VespassMac/Preview\\ Content";
+				DEVELOPMENT_TEAM = GBVVFTJ5A2;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = VespassMac/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Password Manager";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nibnalin.pwdmanager.version;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C27E5C2822AEF3F400BCEC18 /* Build configuration list for PBXProject "Vespass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C27E5C3F22AEF3F600BCEC18 /* Debug */,
+				C27E5C4022AEF3F600BCEC18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C27E5C4122AEF3F600BCEC18 /* Build configuration list for PBXNativeTarget "Vespass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C27E5C4222AEF3F600BCEC18 /* Debug */,
+				C27E5C4322AEF3F600BCEC18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2F5473622B2FFB9000472DE /* Build configuration list for PBXNativeTarget "VespassMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2F5473422B2FFB9000472DE /* Debug */,
+				C2F5473522B2FFB9000472DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F2EB54FB295562C2001653B4 /* XCRemoteSwiftPackageReference "BigInt" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/attaswift/BigInt.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F2EB550129556466001653B4 /* BigInt */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2EB54FB295562C2001653B4 /* XCRemoteSwiftPackageReference "BigInt" */;
+			productName = BigInt;
+		};
+		F2EB550329556475001653B4 /* BigInt */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2EB54FB295562C2001653B4 /* XCRemoteSwiftPackageReference "BigInt" */;
+			productName = BigInt;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = C27E5C2522AEF3F400BCEC18 /* Project object */;
+}
