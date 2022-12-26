@@ -12,10 +12,10 @@ struct ContentView: View {
     @EnvironmentObject var tester: KeyTest
         
     var body: some View {
-        let view = TabView(selection: $tester.category) {
+        let view = TabView() {
             NalinView()
-                .tabItem { Text(KeyTest.Category.nalin.rawValue) }
-                .tag(KeyTest.Category.nalin)
+                .tabItem { Text("Nalin View") }
+                .tag(1)
         }
         
         #if os(macOS)

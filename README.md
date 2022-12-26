@@ -1,6 +1,6 @@
 # Vespass
 
-An experimental new password manager.
+An experimental new password manager: no servers, no master passwords, minimal crypto, open source, fully recoverable.
 
 Extremely WIP, just a vague working prototype.
 
