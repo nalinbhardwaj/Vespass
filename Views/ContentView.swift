@@ -16,6 +16,9 @@ struct ContentView: View {
             NalinView()
                 .tabItem { Text("Nalin View") }
                 .tag(1)
+            DeviceManagerView()
+                .tabItem { Text("Device Manager") }
+                .tag(2)
         }
         
         #if os(macOS)
@@ -29,7 +32,7 @@ struct ContentView: View {
 #if DEBUG
 struct ContentViewPreviews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(KeyTest())
+        ContentView().environmentObject(try! KeyTest())
     }
 }
 #endif

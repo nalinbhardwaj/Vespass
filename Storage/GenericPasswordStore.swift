@@ -10,13 +10,11 @@ import CryptoKit
 import Security
 
 struct GenericPasswordStore {
-    
     /// Stores a CryptoKit key in the keychain as a generic password.
     func storeKey<T: GenericPasswordConvertible>(_ key: T, account: String) throws {
-
         // Treat the key data as a generic password.
         let query = [kSecClass: kSecClassGenericPassword,
-                     kSecAttrAccount: account,
+                     kSecAttrAccount: KEYCHAIN_STORE_PREFIX + account,
                      kSecAttrAccessible: kSecAttrAccessibleWhenUnlocked,
                      kSecUseDataProtectionKeychain: true,
                      kSecValueData: key.rawRepresentation] as [String: Any]
@@ -33,7 +31,7 @@ struct GenericPasswordStore {
 
         // Seek a generic password with the given account.
         let query = [kSecClass: kSecClassGenericPassword,
-                     kSecAttrAccount: account,
+                     kSecAttrAccount: KEYCHAIN_STORE_PREFIX + account,
                      kSecUseDataProtectionKeychain: true,
                      kSecReturnData: true] as [String: Any]
         
@@ -69,7 +67,7 @@ struct GenericPasswordStore {
     func deleteKey(account: String) throws {
         let query = [kSecClass: kSecClassGenericPassword,
                      kSecUseDataProtectionKeychain: true,
-                     kSecAttrAccount: account] as [String: Any]
+                     kSecAttrAccount: KEYCHAIN_STORE_PREFIX + account] as [String: Any]
         switch SecItemDelete(query as CFDictionary) {
         case errSecItemNotFound, errSecSuccess: break // Okay to ignore
         case let status:

@@ -42,14 +42,8 @@ struct NalinView: View {
             
             HStack {
                 #if os(iOS)
-                Text("Device Type")
+                Text("Device UUID")
                 #endif
-                Picker("Device Type", selection: $tester.selfDevice) {
-                    ForEach(DeviceType.allCases, id: \.self) { type in
-                        Text(String(describing: type).capitalized).tag(type)
-                    }
-                }
-                .pickerStyle(SegmentedPickerStyle())
             }
             
             HStack {
@@ -96,7 +90,7 @@ struct NalinView: View {
 #if DEBUG
 struct NalinViewPreviews: PreviewProvider {
     static var previews: some View {
-        NalinView().environmentObject(KeyTest())
+        NalinView().environmentObject(try! KeyTest())
     }
 }
 #endif

@@ -27,21 +27,6 @@ extension GenericPasswordConvertible {
     }
 }
 
-// Declare that the Curve25519 keys are generic passord convertible.
-extension Curve25519.KeyAgreement.PrivateKey: GenericPasswordConvertible {}
-extension Curve25519.Signing.PrivateKey: GenericPasswordConvertible {}
-
-// Ensure that SymmetricKey is generic password convertible.
-extension SymmetricKey: GenericPasswordConvertible {
-    init<D>(rawRepresentation data: D) throws where D: ContiguousBytes {
-        self.init(data: data)
-    }
-    
-    var rawRepresentation: Data {
-        return dataRepresentation  // Contiguous bytes repackaged as a Data instance.
-    }
-}
-
 // Ensure that Secure Enclave keys are generic password convertible.
 extension SecureEnclave.P256.KeyAgreement.PrivateKey: GenericPasswordConvertible {
     init<D>(rawRepresentation data: D) throws where D: ContiguousBytes {

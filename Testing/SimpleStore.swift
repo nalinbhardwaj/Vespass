@@ -8,7 +8,7 @@
 
 import Foundation
 
-let UUID_KEY = "com.nibnalin.pwdmanager.version100.uuid"
+let UUID_KEY = "com.nibnalin.vespas.uuid"
 
 func readUUIDs() -> [UUID] {
     let userDefaults = UserDefaults.standard

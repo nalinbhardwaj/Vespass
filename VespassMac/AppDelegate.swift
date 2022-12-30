@@ -20,7 +20,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             backing: .buffered, defer: false)
         window.center()
         window.setFrameAutosaveName("Main Window")
-        window.contentView = NSHostingView(rootView: ContentView().environmentObject(KeyTest()))
+        window.contentView = NSHostingView(rootView: ContentView().environmentObject(try! KeyTest()))
         window.makeKeyAndOrderFront(nil)
     }
 }

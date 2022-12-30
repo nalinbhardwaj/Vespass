@@ -38,10 +38,14 @@
 		F2EB550A29558FA9001653B4 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB550829558FA9001653B4 /* KeychainStore.swift */; };
 		F2EB550D2956A725001653B4 /* EncryptionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB550C2956A725001653B4 /* EncryptionHelpers.swift */; };
 		F2EB550E2956A725001653B4 /* EncryptionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB550C2956A725001653B4 /* EncryptionHelpers.swift */; };
-		F2EB55102956A82A001653B4 /* DeviceKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB550F2956A82A001653B4 /* DeviceKeyManager.swift */; };
-		F2EB55112956A82A001653B4 /* DeviceKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB550F2956A82A001653B4 /* DeviceKeyManager.swift */; };
+		F2EB55102956A82A001653B4 /* DeviceIdentityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB550F2956A82A001653B4 /* DeviceIdentityManager.swift */; };
+		F2EB55112956A82A001653B4 /* DeviceIdentityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB550F2956A82A001653B4 /* DeviceIdentityManager.swift */; };
 		F2EB55132956C172001653B4 /* CloudkitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB55122956C172001653B4 /* CloudkitManager.swift */; };
 		F2EB55142956C172001653B4 /* CloudkitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB55122956C172001653B4 /* CloudkitManager.swift */; };
+		F2EB551E295DAB81001653B4 /* UUID+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB551D295DAB81001653B4 /* UUID+Extensions.swift */; };
+		F2EB551F295DAB81001653B4 /* UUID+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB551D295DAB81001653B4 /* UUID+Extensions.swift */; };
+		F2EB5521295DDC90001653B4 /* DeviceManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB5520295DDC90001653B4 /* DeviceManagerView.swift */; };
+		F2EB5522295DDC90001653B4 /* DeviceManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB5520295DDC90001653B4 /* DeviceManagerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,8 +76,10 @@
 		F2EB550829558FA9001653B4 /* KeychainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStore.swift; sourceTree = "<group>"; };
 		F2EB550B2955A0EC001653B4 /* VespassiOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VespassiOS.entitlements; sourceTree = "<group>"; };
 		F2EB550C2956A725001653B4 /* EncryptionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionHelpers.swift; sourceTree = "<group>"; };
-		F2EB550F2956A82A001653B4 /* DeviceKeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceKeyManager.swift; sourceTree = "<group>"; };
+		F2EB550F2956A82A001653B4 /* DeviceIdentityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceIdentityManager.swift; sourceTree = "<group>"; };
 		F2EB55122956C172001653B4 /* CloudkitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudkitManager.swift; sourceTree = "<group>"; };
+		F2EB551D295DAB81001653B4 /* UUID+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UUID+Extensions.swift"; sourceTree = "<group>"; };
+		F2EB5520295DDC90001653B4 /* DeviceManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManagerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,10 +162,10 @@
 				C2F5473E22B413A1000472DE /* KeyTest.swift */,
 				F2EB54F82955624B001653B4 /* SecretSharing.swift */,
 				F2EB550529558A91001653B4 /* SimpleStore.swift */,
-				F2EB550829558FA9001653B4 /* KeychainStore.swift */,
 				F2EB550C2956A725001653B4 /* EncryptionHelpers.swift */,
-				F2EB550F2956A82A001653B4 /* DeviceKeyManager.swift */,
+				F2EB550F2956A82A001653B4 /* DeviceIdentityManager.swift */,
 				F2EB55122956C172001653B4 /* CloudkitManager.swift */,
+				F2EB551D295DAB81001653B4 /* UUID+Extensions.swift */,
 			);
 			path = Testing;
 			sourceTree = "<group>";
@@ -190,6 +196,7 @@
 			children = (
 				C27E5C3422AEF3F400BCEC18 /* ContentView.swift */,
 				F2EB54EF2952F4AE001653B4 /* NalinView.swift */,
+				F2EB5520295DDC90001653B4 /* DeviceManagerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -197,6 +204,7 @@
 		C2F5473D22B3F8A0000472DE /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				F2EB550829558FA9001653B4 /* KeychainStore.swift */,
 				C2B1204822B805720061F305 /* GenericPasswordConvertible.swift */,
 				C2B1204222B7FBC40061F305 /* GenericPasswordStore.swift */,
 				C277DDCE22CFFC140036D004 /* KeyStoreError.swift */,
@@ -322,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2EB551E295DAB81001653B4 /* UUID+Extensions.swift in Sources */,
 				F2EB550D2956A725001653B4 /* EncryptionHelpers.swift in Sources */,
 				F2EB54F92955624B001653B4 /* SecretSharing.swift in Sources */,
 				C27E5C3122AEF3F400BCEC18 /* AppDelegate.swift in Sources */,
@@ -329,8 +338,9 @@
 				C2B1204322B7FBC40061F305 /* GenericPasswordStore.swift in Sources */,
 				C2B1204922B805720061F305 /* GenericPasswordConvertible.swift in Sources */,
 				F2EB550929558FA9001653B4 /* KeychainStore.swift in Sources */,
+				F2EB5521295DDC90001653B4 /* DeviceManagerView.swift in Sources */,
 				C27E5C3322AEF3F400BCEC18 /* SceneDelegate.swift in Sources */,
-				F2EB55102956A82A001653B4 /* DeviceKeyManager.swift in Sources */,
+				F2EB55102956A82A001653B4 /* DeviceIdentityManager.swift in Sources */,
 				C27E5C3522AEF3F400BCEC18 /* ContentView.swift in Sources */,
 				C277DDCF22CFFC140036D004 /* KeyStoreError.swift in Sources */,
 				F2EB55132956C172001653B4 /* CloudkitManager.swift in Sources */,
@@ -347,12 +357,14 @@
 				C2B1204422B7FBC40061F305 /* GenericPasswordStore.swift in Sources */,
 				F2EB550729558A91001653B4 /* SimpleStore.swift in Sources */,
 				C2B1204A22B805720061F305 /* GenericPasswordConvertible.swift in Sources */,
+				F2EB551F295DAB81001653B4 /* UUID+Extensions.swift in Sources */,
 				C2F5472722B2FFB4000472DE /* AppDelegate.swift in Sources */,
 				C2F5473722B300A4000472DE /* ContentView.swift in Sources */,
-				F2EB55112956A82A001653B4 /* DeviceKeyManager.swift in Sources */,
+				F2EB55112956A82A001653B4 /* DeviceIdentityManager.swift in Sources */,
 				F2EB54FA2955624B001653B4 /* SecretSharing.swift in Sources */,
 				C277DDD022CFFC140036D004 /* KeyStoreError.swift in Sources */,
 				C2F5474022B413A1000472DE /* KeyTest.swift in Sources */,
+				F2EB5522295DDC90001653B4 /* DeviceManagerView.swift in Sources */,
 				F2EB54F12952F4AE001653B4 /* NalinView.swift in Sources */,
 				F2EB55142956C172001653B4 /* CloudkitManager.swift in Sources */,
 				F2EB550A29558FA9001653B4 /* KeychainStore.swift in Sources */,

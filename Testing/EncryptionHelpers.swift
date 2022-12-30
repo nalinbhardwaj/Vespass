@@ -10,7 +10,7 @@ import CryptoKit
 import Foundation
 
 // Create a salt for key derivation.
-let protocolSalt = "nibnalin's cool password manager".data(using: .utf8)!
+let protocolSalt = "vespass".data(using: .utf8)!
 
 struct EncryptedShare {
     var ephemeralPublicKeyData: Data

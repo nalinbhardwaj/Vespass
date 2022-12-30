@@ -11,7 +11,7 @@ import BigInt
 import CryptoKit
 
 struct SecretShare {
-    var deviceId: DeviceType
+    var deviceUUID: DeviceUUID
     var value: BigInt
 }
 
@@ -36,40 +36,44 @@ class Line {
 }
 
 func randomLine() -> Line {
+    // This appears to track down to calls to arc4random_buf on Apple systems, which appears to be
+    // cryptographically secure.
+    // https://github.com/apple/swift/blob/main/stdlib/public/stubs/Random.cpp#L61
     return Line(slope: BigInt(BigUInt.randomInteger(lessThan: BigUInt(MODULUS - 2)) + 2), intercept: BigInt(BigUInt.randomInteger(lessThan: BigUInt(MODULUS - 2)) + 2))
 }
 
-func createSecret() -> [DeviceType:SecretShare] {
+func createSecret(deviceUUIDs: [DeviceUUID]) -> [DeviceUUID: SecretShare] {
     let line = randomLine()
     print("secret is", line.intercept, line.slope)
-    return [
-        DeviceType.laptop: SecretShare(deviceId: .laptop, value: line.eval(x: BigInt(DeviceType.laptop.rawValue))),
-        DeviceType.mobile: SecretShare(deviceId: .mobile, value: line.eval(x: BigInt(DeviceType.mobile.rawValue))),
-        DeviceType.paper: SecretShare(deviceId: .paper, value: line.eval(x: BigInt(DeviceType.paper.rawValue)))
-    ]
+    var res: [DeviceUUID: SecretShare] = [:]
+    for deviceUUID in deviceUUIDs {
+        res[deviceUUID] = SecretShare(deviceUUID: deviceUUID, value: line.eval(x: BigInt(deviceUUID.uuidString.hash))) // TODO: Does this hash introduce any attack vector?
+    }
+    return res
 }
 
 func reassembleSecret(share_1: SecretShare, share_2: SecretShare) -> BigInt {
-    let slope_den = mod(BigInt(share_1.deviceId.rawValue) - BigInt(share_2.deviceId.rawValue))
+    let slope_den = mod(BigInt(share_1.deviceUUID.uuidString.hash) - BigInt(share_2.deviceUUID.uuidString.hash))
     let slope_den_inv = slope_den.power(MODULUS - 2, modulus: MODULUS)
     let slope_num = mod(share_1.value - share_2.value)
     let slope = mod(slope_num * slope_den_inv)
     
-    let intercept = mod(share_1.value - mod(slope * BigInt(share_1.deviceId.rawValue)))
+    let intercept = mod(share_1.value - mod(slope * BigInt(share_1.deviceUUID.uuidString.hash)))
 
     return intercept
 }
 
-//func testSecretSharing() {
-//    let secrets = createSecret()
-//    let arr_secrets = [secrets.0, secrets.1, secrets.2]
-//    let v = reassembleSecret(share_1: secrets.0, share_2: secrets.1)
-//    for sec_a in arr_secrets {
-//        for sec_b in arr_secrets {
-//            if sec_a.deviceId == sec_b.deviceId {
-//                continue
-//            }
-//            assert(v == reassembleSecret(share_1: sec_a, share_2: sec_b))
-//        }
-//    }
-//}
+func testSecretSharing() {
+    let deviceUUIDs = [UUID(), UUID(), UUID()]
+    let secrets = createSecret(deviceUUIDs: deviceUUIDs)
+    let arr_secrets = [secrets[deviceUUIDs[0]]!, secrets[deviceUUIDs[1]]!, secrets[deviceUUIDs[2]]!]
+    let v = reassembleSecret(share_1: arr_secrets[0], share_2: arr_secrets[1])
+    for sec_a in arr_secrets {
+        for sec_b in arr_secrets {
+            if sec_a.deviceUUID.uuidString == sec_b.deviceUUID.uuidString {
+                continue
+            }
+            assert(v == reassembleSecret(share_1: sec_a, share_2: sec_b))
+        }
+    }
+}

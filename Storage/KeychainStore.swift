@@ -9,11 +9,9 @@
 import Foundation
 import Security
 
-let KEYCHAIN_STORE_PREFIX = "com.nibnalin.pwdmanager3.keychain."
-
+let KEYCHAIN_STORE_PREFIX = "com.nibnalin.vespass.keychain.debug."
 
 class KeyChain {
-
     class func save(key: String, data: Data) -> OSStatus {
         let query = [
             kSecClass as String       : kSecClassGenericPassword as String,
@@ -53,7 +51,6 @@ class KeyChain {
 }
 
 extension Data {
-
     init<T>(from value: T) {
         var value = value
         self.init(buffer: UnsafeBufferPointer(start: &value, count: 1))
