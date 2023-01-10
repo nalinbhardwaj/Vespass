@@ -10,9 +10,9 @@ import Foundation
 import BigInt
 import CryptoKit
 
-struct SecretShare {
-    var deviceUUID: DeviceUUID
-    var value: BigInt
+struct UnencryptedSecretShare {
+    let deviceUUID: DeviceUUID
+    let value: BigInt
 }
 
 let MODULUS = BigInt(stringLiteral: "28948022309329048855892746252171976963363056481941560715954676764349967630337")
@@ -42,17 +42,17 @@ func randomLine() -> Line {
     return Line(slope: BigInt(BigUInt.randomInteger(lessThan: BigUInt(MODULUS - 2)) + 2), intercept: BigInt(BigUInt.randomInteger(lessThan: BigUInt(MODULUS - 2)) + 2))
 }
 
-func createSecret(deviceUUIDs: [DeviceUUID]) -> [DeviceUUID: SecretShare] {
+func createSecret(deviceUUIDs: [DeviceUUID]) -> [DeviceUUID: UnencryptedSecretShare] {
     let line = randomLine()
     print("secret is", line.intercept, line.slope)
-    var res: [DeviceUUID: SecretShare] = [:]
+    var res: [DeviceUUID: UnencryptedSecretShare] = [:]
     for deviceUUID in deviceUUIDs {
-        res[deviceUUID] = SecretShare(deviceUUID: deviceUUID, value: line.eval(x: BigInt(deviceUUID.uuidString.hash))) // TODO: Does this hash introduce any attack vector?
+        res[deviceUUID] = UnencryptedSecretShare(deviceUUID: deviceUUID, value: line.eval(x: BigInt(deviceUUID.uuidString.hash))) // TODO: Does this hash introduce any attack vector?
     }
     return res
 }
 
-func reassembleSecret(share_1: SecretShare, share_2: SecretShare) -> BigInt {
+func reassembleSecret(share_1: UnencryptedSecretShare, share_2: UnencryptedSecretShare) -> BigInt {
     let slope_den = mod(BigInt(share_1.deviceUUID.uuidString.hash) - BigInt(share_2.deviceUUID.uuidString.hash))
     let slope_den_inv = slope_den.power(MODULUS - 2, modulus: MODULUS)
     let slope_num = mod(share_1.value - share_2.value)
