@@ -1,9 +1,9 @@
 //
-//  SecretSharing.swift
+//  SecretSharingHelpers.swift
 //  Vespass
 //
 //  Created by Nalin Bhardwaj on 22/12/22.
-//  Copyright © 2022 Apple. All rights reserved.
+//  Copyright © 2022 Vespass. All rights reserved.
 //
 
 import Foundation
@@ -44,7 +44,6 @@ func randomLine() -> Line {
 
 func createSecret(deviceUUIDs: [DeviceUUID]) -> [DeviceUUID: UnencryptedSecretShare] {
     let line = randomLine()
-    print("secret is", line.intercept, line.slope)
     var res: [DeviceUUID: UnencryptedSecretShare] = [:]
     for deviceUUID in deviceUUIDs {
         res[deviceUUID] = UnencryptedSecretShare(deviceUUID: deviceUUID, value: line.eval(x: BigInt(deviceUUID.uuidString.hash))) // TODO: Does this hash introduce any attack vector?
@@ -52,7 +51,39 @@ func createSecret(deviceUUIDs: [DeviceUUID]) -> [DeviceUUID: UnencryptedSecretSh
     return res
 }
 
-func reassembleSecret(share_1: UnencryptedSecretShare, share_2: UnencryptedSecretShare) -> BigInt {
+struct FullSecret {
+    let value: BigInt
+    
+    func stringify(upper: Bool = true, lower: Bool = true, digits: Bool = true, special: Bool = true) -> String {
+        var availableOptions: String = ""
+        if upper {
+            availableOptions.append("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+        }
+        if lower {
+            availableOptions.append("abcdefghijklmnopqrstuvwxyz")
+        }
+        if digits {
+            availableOptions.append("0123456789")
+        }
+        if special {
+            availableOptions.append("-~!@#$%^&*_+=`|(){}[:;\"'<>,.? ] ")
+        }
+        
+        assert(!availableOptions.isEmpty)
+        
+        var convert = value
+        let optionCount = BigInt(availableOptions.count)
+        var res = ""
+        while convert > 0 {
+            let index = availableOptions.index(availableOptions.startIndex, offsetBy: Int(convert % optionCount))
+            res.append(availableOptions[index])
+            convert = convert / optionCount
+        }
+        return res
+    }
+}
+
+func reassembleSecret(share_1: UnencryptedSecretShare, share_2: UnencryptedSecretShare) -> FullSecret {
     let slope_den = mod(BigInt(share_1.deviceUUID.uuidString.hash) - BigInt(share_2.deviceUUID.uuidString.hash))
     let slope_den_inv = slope_den.power(MODULUS - 2, modulus: MODULUS)
     let slope_num = mod(share_1.value - share_2.value)
@@ -60,7 +91,7 @@ func reassembleSecret(share_1: UnencryptedSecretShare, share_2: UnencryptedSecre
     
     let intercept = mod(share_1.value - mod(slope * BigInt(share_1.deviceUUID.uuidString.hash)))
 
-    return intercept
+    return FullSecret(value: intercept)
 }
 
 func testSecretSharing() {
@@ -73,7 +104,7 @@ func testSecretSharing() {
             if sec_a.deviceUUID.uuidString == sec_b.deviceUUID.uuidString {
                 continue
             }
-            assert(v == reassembleSecret(share_1: sec_a, share_2: sec_b))
+            assert(v.value == reassembleSecret(share_1: sec_a, share_2: sec_b).value)
         }
     }
 }

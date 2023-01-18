@@ -1,9 +1,12 @@
-/*
-See LICENSE folder for this sample’s licensing information.
+//
+//  GenericPasswordConvertible.swift
+//  Vespass
+//
+//  Created by Nalin Bhardwaj on 22/12/22.
+//  Copyright © 2022 Vespass. All rights reserved.
+//
+//  The interface required for conversion to a generic password keychain item.
 
-Abstract:
-The interface required for conversion to a generic password keychain item.
-*/
 
 import Foundation
 import CryptoKit

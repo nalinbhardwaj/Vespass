@@ -1,9 +1,11 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-Errors that can be generated as a result of attempting to store keys.
-*/
+//
+//  KeyStoreError.swift
+//  Vespass
+//
+//  Created by Nalin Bhardwaj on 22/12/22.
+//  Copyright © 2022 Vespass. All rights reserved.
+//
+//  Errors that can be generated as a result of attempting to store keys.
 
 import Foundation
 

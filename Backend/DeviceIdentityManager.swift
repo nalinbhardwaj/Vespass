@@ -3,7 +3,7 @@
 //  Vespass
 //
 //  Created by Nalin Bhardwaj on 23/12/22.
-//  Copyright © 2022 Apple. All rights reserved.
+//  Copyright © 2022 Vespass. All rights reserved.
 //
 
 import Foundation
@@ -20,7 +20,7 @@ typealias SecurityError = Unmanaged<CFError>
 typealias DeviceUUID = UUID
 
 struct DeviceIdentity {
-    let deviceUUID: DeviceUUID
+    let deviceUUID: DeviceUUID // TODO: disallow anyone to claim device UUID with string hash = 0
     let deviceName: String
     let signingPubkey: P256.Signing.PublicKey
     let encryptionPubkey: P256.KeyAgreement.PublicKey
@@ -95,25 +95,30 @@ func storeLocalIdentities(_ identities: [DeviceUUID: DeviceIdentity]) throws {
     guard status == errSecSuccess else { throw "Unable to write local identities" }
 }
 
-extension CloudKitService {
-    func fetchCloudIdentities() async throws -> [DeviceUUID: DeviceIdentity] {
-        let query = CKQuery(recordType: "DeviceIdentity", predicate: NSPredicate(value: true))
-        let result = try await CKContainer.default().privateCloudDatabase.records(matching: query)
-        let records = result.matchResults.compactMap { try? $0.1.get() }
-        let values = try records.compactMap(DeviceIdentity.init)
-        var res: [DeviceUUID: DeviceIdentity] = [:]
-        for val in values {
-            res[val.deviceUUID] = val
-        }
-        return res
+func fetchCloudIdentities() async throws -> [DeviceUUID: DeviceIdentity] {
+    let query = CKQuery(recordType: "DeviceIdentity", predicate: NSPredicate(value: true))
+    let result = try await CKContainer.default().privateCloudDatabase.records(matching: query)
+    let records = result.matchResults.compactMap { try? $0.1.get() }
+    let values = try records.compactMap(DeviceIdentity.init)
+    var res: [DeviceUUID: DeviceIdentity] = [:]
+    for val in values {
+        res[val.deviceUUID] = val
     }
+    return res
 }
 
 class SelfDeviceIdentity {
     let publicIdentity: DeviceIdentity
-    internal let signingPrivkeyData: Data
-    internal let encryptionPrivkeyData: Data
-    
+    private let store = GenericPasswordStore()
+    internal var signingPrivkeyData: Data {
+        let readSigningPrivkey: SecureEnclave.P256.Signing.PrivateKey? = try! self.store.readKey(account: "signing")
+        return readSigningPrivkey!.dataRepresentation
+    }
+    internal var encryptionPrivkeyData: Data {
+        let readEncryptionPrivkey: SecureEnclave.P256.KeyAgreement.PrivateKey? = try! self.store.readKey(account: "encryption")
+        return readEncryptionPrivkey!.dataRepresentation
+    }
+
     internal func createContext(usage: String, duration: TimeInterval) -> LAContext {
         let context = LAContext()
         context.touchIDAuthenticationAllowableReuseDuration = duration
@@ -122,13 +127,15 @@ class SelfDeviceIdentity {
     }
     
     func getSigningPrivkey(usage: String, duration: TimeInterval = 0.05) throws -> SecureEnclave.P256.Signing.PrivateKey {
+        // TODO: Improve the prompts to user for signing/encryption for transparency
         let context = createContext(usage: usage, duration: duration)
-        return try SecureEnclave.P256.Signing.PrivateKey(dataRepresentation: signingPrivkeyData, authenticationContext: context)
+        let key = try! SecureEnclave.P256.Signing.PrivateKey(dataRepresentation: self.signingPrivkeyData, authenticationContext: context)
+        return key
     }
     
     func getEncryptionPrivkey(usage: String, duration: TimeInterval = 0.05) throws -> SecureEnclave.P256.KeyAgreement.PrivateKey {
         let context = createContext(usage: usage, duration: duration)
-        return try SecureEnclave.P256.KeyAgreement.PrivateKey(dataRepresentation: encryptionPrivkeyData, authenticationContext: context)
+        return try SecureEnclave.P256.KeyAgreement.PrivateKey(dataRepresentation: self.encryptionPrivkeyData, authenticationContext: context)
     }
     
     init() throws {
@@ -165,8 +172,6 @@ class SelfDeviceIdentity {
             print("Created new self identity")
         }
         
-        signingPrivkeyData = signingPrivkey!.rawRepresentation
-        encryptionPrivkeyData = encryptionPrivkey!.rawRepresentation
         #if os(iOS)
         let deviceName = UIDevice.current.name
         #else
@@ -190,14 +195,13 @@ class DeviceIdentityManager {
         print("Syncing Cloud store")
         var curLocalIdentities = deviceUUIDToIdentity
         // Load cloudkit identities
-        let ck = CloudKitService()
-        let cloudIdentities = try! await ck.fetchCloudIdentities()
+        let cloudIdentities = try! await fetchCloudIdentities()
 
         // Diff for inconsistencies
         for (localUUID, _) in curLocalIdentities {
             if cloudIdentities[localUUID] == nil && localUUID != selfIdentity.publicIdentity.deviceUUID {
                 curLocalIdentities[localUUID] = nil
-                print("Found deleted identity \(localUUID) locally not in cloud store? Deleted")
+                print("Found deleted identity \(localUUID) locally but not in cloud store? Deleted")
             }
         }
         
@@ -211,7 +215,7 @@ class DeviceIdentityManager {
         try! storeLocalIdentities(curLocalIdentities)
         deviceUUIDToIdentity = curLocalIdentities
         if cloudIdentities[selfIdentity.publicIdentity.deviceUUID] == nil && !addedSelf {
-            try! await ck.save(selfIdentity.publicIdentity.record)
+            try! await saveCloudKitRecord(selfIdentity.publicIdentity.record)
             addedSelf = true
             print("Added self identity \(selfIdentity.publicIdentity.deviceUUID) to cloud store")
         }
@@ -244,5 +248,19 @@ class DeviceIdentityManager {
         Task {
             await refreshCloud()
         }
+    }
+    
+    func encryptNewShares(secretShares: [DeviceUUID: UnencryptedSecretShare]) throws -> [DeviceUUID: EncryptedSecretShare] {
+        var res: [DeviceUUID: EncryptedSecretShare] = [:]
+        let senderSigningKey = try self.selfIdentity.getSigningPrivkey(usage: "Encrypt new shares")
+
+        for (deviceUUID, share) in secretShares {
+            let receiverEncryptionPublicKey = self.deviceUUIDToIdentity[deviceUUID]!.encryptionPubkey
+            let messageData = share.value.serialize()
+            let sealedShare = try! encrypt(messageData, to: receiverEncryptionPublicKey, signedBy: senderSigningKey)
+            res[deviceUUID] = sealedShare
+        }
+        
+        return res
     }
 }

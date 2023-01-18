@@ -3,22 +3,25 @@
 //  Vespass
 //
 //  Created by Nalin Bhardwaj on 23/12/22.
-//  Copyright © 2022 Apple. All rights reserved.
+//  Copyright © 2022 Vespass. All rights reserved.
 //
 
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var tester: KeyTest
+    @EnvironmentObject var backend: Backend
         
     var body: some View {
         let view = TabView() {
-            NalinView()
-                .tabItem { Text("Nalin View") }
+            SecretView()
+                .tabItem { Text("Secrets") }
                 .tag(1)
+            ReassemblyView()
+                .tabItem { Text("Reassembly") }
+                .tag(2)
             DeviceManagerView()
                 .tabItem { Text("Device Manager") }
-                .tag(2)
+                .tag(3)
         }
         
         #if os(macOS)
@@ -32,7 +35,7 @@ struct ContentView: View {
 #if DEBUG
 struct ContentViewPreviews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(try! KeyTest())
+        ContentView().environmentObject(try! Backend())
     }
 }
 #endif

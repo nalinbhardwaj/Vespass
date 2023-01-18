@@ -3,7 +3,7 @@
 //  Vespass
 //
 //  Created by Nalin Bhardwaj on 23/12/22.
-//  Copyright © 2022 Apple. All rights reserved.
+//  Copyright © 2022 Vespass. All rights reserved.
 //
 
 import CryptoKit
@@ -12,14 +12,14 @@ import Foundation
 // Create a salt for key derivation.
 let protocolSalt = "vespass".data(using: .utf8)!
 
-struct EncryptedShare {
+struct EncryptedData {
     var ephemeralPublicKeyData: Data
     var ciphertext: Data
     var signature: Data
 }
 
 /// Generates an ephemeral key agreement key and performs key agreement to get the shared secret and derive the symmetric encryption key.
-func encrypt(_ data: Data, to theirEncryptionKey: P256.KeyAgreement.PublicKey, signedBy ourSigningKey: SecureEnclave.P256.Signing.PrivateKey) throws -> EncryptedShare {
+func encrypt(_ data: Data, to theirEncryptionKey: P256.KeyAgreement.PublicKey, signedBy ourSigningKey: SecureEnclave.P256.Signing.PrivateKey) throws -> EncryptedData {
         let ephemeralKey = P256.KeyAgreement.PrivateKey()
         let ephemeralPublicKey = ephemeralKey.publicKey.rawRepresentation
         
@@ -35,7 +35,7 @@ func encrypt(_ data: Data, to theirEncryptionKey: P256.KeyAgreement.PublicKey, s
         let ciphertext = try ChaChaPoly.seal(data, using: symmetricKey).combined
         let signature = try ourSigningKey.signature(for: ciphertext + ephemeralPublicKey + theirEncryptionKey.rawRepresentation)
                 
-        return EncryptedShare(ephemeralPublicKeyData: ephemeralPublicKey, ciphertext: ciphertext, signature: signature.derRepresentation)
+        return EncryptedData(ephemeralPublicKeyData: ephemeralPublicKey, ciphertext: ciphertext, signature: signature.derRepresentation)
 }
 
 enum DecryptionErrors: Error {
@@ -43,7 +43,7 @@ enum DecryptionErrors: Error {
 }
 
 /// Generates an ephemeral key agreement key and the performs key agreement to get the shared secret and derive the symmetric encryption key.
-func decrypt(_ sealedMessage: EncryptedShare,
+func decrypt(_ sealedMessage: EncryptedData,
              using ourKeyEncryptionKey: SecureEnclave.P256.KeyAgreement.PrivateKey,
              from theirSigningKey: P256.Signing.PublicKey) throws -> Data {
     let data = sealedMessage.ciphertext + sealedMessage.ephemeralPublicKeyData + ourKeyEncryptionKey.publicKey.rawRepresentation

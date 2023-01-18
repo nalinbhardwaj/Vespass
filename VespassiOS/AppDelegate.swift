@@ -1,9 +1,11 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-The app delegate for iOS.
-*/
+//
+//  AppDelegate.swift
+//  Vespass
+//
+//  Created by Nalin Bhardwaj on 23/12/22.
+//  Copyright © 2022 Vespass. All rights reserved.
+//
+//  The app delegate for iOS.
 
 import UIKit
 

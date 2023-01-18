@@ -1,9 +1,11 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-Methods for storing generic password convertible items in the keychain.
-*/
+//
+//  GenericPasswordStore.swift
+//  Vespass
+//
+//  Created by Nalin Bhardwaj on 22/12/22.
+//  Copyright © 2022 Vespass. All rights reserved.
+//
+//  Methods for storing generic password convertible items in the keychain.
 
 import Foundation
 import CryptoKit

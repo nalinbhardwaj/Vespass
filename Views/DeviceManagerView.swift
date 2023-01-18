@@ -1,22 +1,21 @@
 //
-//  NalinView.swift
+//  DeviceManagerView.swift
 //  Vespass
 //
 //  Created by Nalin Bhardwaj on 23/12/22.
-//  Copyright © 2022 Apple. All rights reserved.
-//
+//  Copyright © 2022 Vespass. All rights reserved.
 
 import SwiftUI
 
 struct DeviceManagerView: View {
-    @EnvironmentObject var tester: KeyTest
+    @EnvironmentObject var backend: Backend
 
     var body: some View {
         VStack(alignment: .leading, spacing: 25) {
             Spacer()
             Text("Device Identities").font(.title).frame(maxWidth: .infinity, alignment: .center)
             List {
-                ForEach(self.tester.displayedDevices, id: \.deviceName) { deviceIdentity in
+                ForEach(self.backend.displayedDevices, id: \.deviceName) { deviceIdentity in
                     HStack {
                         Text(deviceIdentity.deviceName)
                         Spacer()
@@ -26,7 +25,7 @@ struct DeviceManagerView: View {
             }
             HStack(alignment: .center) {
                 Button("Refresh", action: {
-                    tester.refreshDevices()
+                    backend.refreshDevices()
                 }).buttonStyle(.bordered).frame(maxWidth: .infinity, alignment: .center)
             }
             Spacer()
@@ -37,7 +36,7 @@ struct DeviceManagerView: View {
 #if DEBUG
 struct DeviceManagerViewPreviews: PreviewProvider {
     static var previews: some View {
-        DeviceManagerView().environmentObject(try! KeyTest())
+        DeviceManagerView().environmentObject(try! Backend())
     }
 }
 #endif

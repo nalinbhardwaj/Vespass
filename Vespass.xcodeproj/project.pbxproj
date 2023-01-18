@@ -24,28 +24,32 @@
 		C2F5472E22B2FFB8000472DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2F5472D22B2FFB8000472DE /* Preview Assets.xcassets */; };
 		C2F5473122B2FFB9000472DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2F5472F22B2FFB9000472DE /* Main.storyboard */; };
 		C2F5473722B300A4000472DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27E5C3422AEF3F400BCEC18 /* ContentView.swift */; };
-		C2F5473F22B413A1000472DE /* KeyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F5473E22B413A1000472DE /* KeyTest.swift */; };
-		C2F5474022B413A1000472DE /* KeyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F5473E22B413A1000472DE /* KeyTest.swift */; };
-		F2EB54F02952F4AE001653B4 /* NalinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB54EF2952F4AE001653B4 /* NalinView.swift */; };
-		F2EB54F12952F4AE001653B4 /* NalinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB54EF2952F4AE001653B4 /* NalinView.swift */; };
-		F2EB54F92955624B001653B4 /* SecretSharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB54F82955624B001653B4 /* SecretSharing.swift */; };
-		F2EB54FA2955624B001653B4 /* SecretSharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB54F82955624B001653B4 /* SecretSharing.swift */; };
+		C2F5473F22B413A1000472DE /* Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F5473E22B413A1000472DE /* Backend.swift */; };
+		C2F5474022B413A1000472DE /* Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F5473E22B413A1000472DE /* Backend.swift */; };
+		F2221FF22977635F00C8D2BD /* ReassemblyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2221FF12977635F00C8D2BD /* ReassemblyView.swift */; };
+		F2221FF32977635F00C8D2BD /* ReassemblyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2221FF12977635F00C8D2BD /* ReassemblyView.swift */; };
+		F29FC4EA2970DBA80037A058 /* SecretManager+Reassembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29FC4E92970DBA80037A058 /* SecretManager+Reassembly.swift */; };
+		F29FC4EB2970DBA80037A058 /* SecretManager+Reassembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29FC4E92970DBA80037A058 /* SecretManager+Reassembly.swift */; };
+		F2EB54F02952F4AE001653B4 /* SecretView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB54EF2952F4AE001653B4 /* SecretView.swift */; };
+		F2EB54F12952F4AE001653B4 /* SecretView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB54EF2952F4AE001653B4 /* SecretView.swift */; };
+		F2EB54F92955624B001653B4 /* SecretSharingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB54F82955624B001653B4 /* SecretSharingHelpers.swift */; };
+		F2EB54FA2955624B001653B4 /* SecretSharingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB54F82955624B001653B4 /* SecretSharingHelpers.swift */; };
 		F2EB550229556466001653B4 /* BigInt in Frameworks */ = {isa = PBXBuildFile; productRef = F2EB550129556466001653B4 /* BigInt */; };
 		F2EB550429556475001653B4 /* BigInt in Frameworks */ = {isa = PBXBuildFile; productRef = F2EB550329556475001653B4 /* BigInt */; };
-		F2EB550629558A91001653B4 /* SimpleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB550529558A91001653B4 /* SimpleStore.swift */; };
-		F2EB550729558A91001653B4 /* SimpleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB550529558A91001653B4 /* SimpleStore.swift */; };
 		F2EB550929558FA9001653B4 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB550829558FA9001653B4 /* KeychainStore.swift */; };
 		F2EB550A29558FA9001653B4 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB550829558FA9001653B4 /* KeychainStore.swift */; };
 		F2EB550D2956A725001653B4 /* EncryptionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB550C2956A725001653B4 /* EncryptionHelpers.swift */; };
 		F2EB550E2956A725001653B4 /* EncryptionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB550C2956A725001653B4 /* EncryptionHelpers.swift */; };
 		F2EB55102956A82A001653B4 /* DeviceIdentityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB550F2956A82A001653B4 /* DeviceIdentityManager.swift */; };
 		F2EB55112956A82A001653B4 /* DeviceIdentityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB550F2956A82A001653B4 /* DeviceIdentityManager.swift */; };
-		F2EB55132956C172001653B4 /* CloudkitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB55122956C172001653B4 /* CloudkitManager.swift */; };
-		F2EB55142956C172001653B4 /* CloudkitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB55122956C172001653B4 /* CloudkitManager.swift */; };
+		F2EB55132956C172001653B4 /* CloudkitHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB55122956C172001653B4 /* CloudkitHelpers.swift */; };
+		F2EB55142956C172001653B4 /* CloudkitHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB55122956C172001653B4 /* CloudkitHelpers.swift */; };
 		F2EB551E295DAB81001653B4 /* UUID+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB551D295DAB81001653B4 /* UUID+Extensions.swift */; };
 		F2EB551F295DAB81001653B4 /* UUID+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB551D295DAB81001653B4 /* UUID+Extensions.swift */; };
 		F2EB5521295DDC90001653B4 /* DeviceManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB5520295DDC90001653B4 /* DeviceManagerView.swift */; };
 		F2EB5522295DDC90001653B4 /* DeviceManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB5520295DDC90001653B4 /* DeviceManagerView.swift */; };
+		F2EB5524295F1AC2001653B4 /* SecretManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB5523295F1AC2001653B4 /* SecretManager.swift */; };
+		F2EB5525295F1AC2001653B4 /* SecretManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB5523295F1AC2001653B4 /* SecretManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,17 +73,19 @@
 		C2F5473022B2FFB9000472DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C2F5473222B2FFB9000472DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2F5473322B2FFB9000472DE /* VespassMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VespassMac.entitlements; sourceTree = "<group>"; };
-		C2F5473E22B413A1000472DE /* KeyTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyTest.swift; sourceTree = "<group>"; };
-		F2EB54EF2952F4AE001653B4 /* NalinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NalinView.swift; sourceTree = "<group>"; };
-		F2EB54F82955624B001653B4 /* SecretSharing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretSharing.swift; sourceTree = "<group>"; };
-		F2EB550529558A91001653B4 /* SimpleStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleStore.swift; sourceTree = "<group>"; };
+		C2F5473E22B413A1000472DE /* Backend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backend.swift; sourceTree = "<group>"; };
+		F2221FF12977635F00C8D2BD /* ReassemblyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReassemblyView.swift; sourceTree = "<group>"; };
+		F29FC4E92970DBA80037A058 /* SecretManager+Reassembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecretManager+Reassembly.swift"; sourceTree = "<group>"; };
+		F2EB54EF2952F4AE001653B4 /* SecretView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretView.swift; sourceTree = "<group>"; };
+		F2EB54F82955624B001653B4 /* SecretSharingHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretSharingHelpers.swift; sourceTree = "<group>"; };
 		F2EB550829558FA9001653B4 /* KeychainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStore.swift; sourceTree = "<group>"; };
 		F2EB550B2955A0EC001653B4 /* VespassiOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VespassiOS.entitlements; sourceTree = "<group>"; };
 		F2EB550C2956A725001653B4 /* EncryptionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionHelpers.swift; sourceTree = "<group>"; };
 		F2EB550F2956A82A001653B4 /* DeviceIdentityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceIdentityManager.swift; sourceTree = "<group>"; };
-		F2EB55122956C172001653B4 /* CloudkitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudkitManager.swift; sourceTree = "<group>"; };
+		F2EB55122956C172001653B4 /* CloudkitHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudkitHelpers.swift; sourceTree = "<group>"; };
 		F2EB551D295DAB81001653B4 /* UUID+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UUID+Extensions.swift"; sourceTree = "<group>"; };
 		F2EB5520295DDC90001653B4 /* DeviceManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManagerView.swift; sourceTree = "<group>"; };
+		F2EB5523295F1AC2001653B4 /* SecretManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,8 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				C2B1203B22B58F420061F305 /* README.md */,
-				C2F5473D22B3F8A0000472DE /* Storage */,
-				C2B1204B22B80B540061F305 /* Testing */,
+				C2B1204B22B80B540061F305 /* Backend */,
 				C2F5473C22B3F894000472DE /* Views */,
 				C27E5C2F22AEF3F400BCEC18 /* VespassiOS */,
 				C2F5472522B2FFB4000472DE /* VespassMac */,
@@ -156,18 +161,20 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		C2B1204B22B80B540061F305 /* Testing */ = {
+		C2B1204B22B80B540061F305 /* Backend */ = {
 			isa = PBXGroup;
 			children = (
-				C2F5473E22B413A1000472DE /* KeyTest.swift */,
-				F2EB54F82955624B001653B4 /* SecretSharing.swift */,
-				F2EB550529558A91001653B4 /* SimpleStore.swift */,
+				C2F5473D22B3F8A0000472DE /* Storage */,
+				C2F5473E22B413A1000472DE /* Backend.swift */,
+				F2EB54F82955624B001653B4 /* SecretSharingHelpers.swift */,
 				F2EB550C2956A725001653B4 /* EncryptionHelpers.swift */,
 				F2EB550F2956A82A001653B4 /* DeviceIdentityManager.swift */,
-				F2EB55122956C172001653B4 /* CloudkitManager.swift */,
+				F2EB55122956C172001653B4 /* CloudkitHelpers.swift */,
 				F2EB551D295DAB81001653B4 /* UUID+Extensions.swift */,
+				F2EB5523295F1AC2001653B4 /* SecretManager.swift */,
+				F29FC4E92970DBA80037A058 /* SecretManager+Reassembly.swift */,
 			);
-			path = Testing;
+			path = Backend;
 			sourceTree = "<group>";
 		};
 		C2F5472522B2FFB4000472DE /* VespassMac */ = {
@@ -195,7 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				C27E5C3422AEF3F400BCEC18 /* ContentView.swift */,
-				F2EB54EF2952F4AE001653B4 /* NalinView.swift */,
+				F2EB54EF2952F4AE001653B4 /* SecretView.swift */,
+				F2221FF12977635F00C8D2BD /* ReassemblyView.swift */,
 				F2EB5520295DDC90001653B4 /* DeviceManagerView.swift */,
 			);
 			path = Views;
@@ -269,7 +277,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1420;
 				ORGANIZATIONNAME = Apple;
 				TargetAttributes = {
 					C27E5C2C22AEF3F400BCEC18 = {
@@ -330,11 +338,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F29FC4EA2970DBA80037A058 /* SecretManager+Reassembly.swift in Sources */,
 				F2EB551E295DAB81001653B4 /* UUID+Extensions.swift in Sources */,
 				F2EB550D2956A725001653B4 /* EncryptionHelpers.swift in Sources */,
-				F2EB54F92955624B001653B4 /* SecretSharing.swift in Sources */,
+				F2EB5524295F1AC2001653B4 /* SecretManager.swift in Sources */,
+				F2EB54F92955624B001653B4 /* SecretSharingHelpers.swift in Sources */,
 				C27E5C3122AEF3F400BCEC18 /* AppDelegate.swift in Sources */,
-				F2EB54F02952F4AE001653B4 /* NalinView.swift in Sources */,
+				F2EB54F02952F4AE001653B4 /* SecretView.swift in Sources */,
 				C2B1204322B7FBC40061F305 /* GenericPasswordStore.swift in Sources */,
 				C2B1204922B805720061F305 /* GenericPasswordConvertible.swift in Sources */,
 				F2EB550929558FA9001653B4 /* KeychainStore.swift in Sources */,
@@ -343,9 +353,9 @@
 				F2EB55102956A82A001653B4 /* DeviceIdentityManager.swift in Sources */,
 				C27E5C3522AEF3F400BCEC18 /* ContentView.swift in Sources */,
 				C277DDCF22CFFC140036D004 /* KeyStoreError.swift in Sources */,
-				F2EB55132956C172001653B4 /* CloudkitManager.swift in Sources */,
-				F2EB550629558A91001653B4 /* SimpleStore.swift in Sources */,
-				C2F5473F22B413A1000472DE /* KeyTest.swift in Sources */,
+				F2EB55132956C172001653B4 /* CloudkitHelpers.swift in Sources */,
+				C2F5473F22B413A1000472DE /* Backend.swift in Sources */,
+				F2221FF22977635F00C8D2BD /* ReassemblyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,21 +363,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F29FC4EB2970DBA80037A058 /* SecretManager+Reassembly.swift in Sources */,
 				F2EB550E2956A725001653B4 /* EncryptionHelpers.swift in Sources */,
 				C2B1204422B7FBC40061F305 /* GenericPasswordStore.swift in Sources */,
-				F2EB550729558A91001653B4 /* SimpleStore.swift in Sources */,
 				C2B1204A22B805720061F305 /* GenericPasswordConvertible.swift in Sources */,
 				F2EB551F295DAB81001653B4 /* UUID+Extensions.swift in Sources */,
 				C2F5472722B2FFB4000472DE /* AppDelegate.swift in Sources */,
 				C2F5473722B300A4000472DE /* ContentView.swift in Sources */,
 				F2EB55112956A82A001653B4 /* DeviceIdentityManager.swift in Sources */,
-				F2EB54FA2955624B001653B4 /* SecretSharing.swift in Sources */,
+				F2EB54FA2955624B001653B4 /* SecretSharingHelpers.swift in Sources */,
 				C277DDD022CFFC140036D004 /* KeyStoreError.swift in Sources */,
-				C2F5474022B413A1000472DE /* KeyTest.swift in Sources */,
+				F2221FF32977635F00C8D2BD /* ReassemblyView.swift in Sources */,
+				C2F5474022B413A1000472DE /* Backend.swift in Sources */,
 				F2EB5522295DDC90001653B4 /* DeviceManagerView.swift in Sources */,
-				F2EB54F12952F4AE001653B4 /* NalinView.swift in Sources */,
-				F2EB55142956C172001653B4 /* CloudkitManager.swift in Sources */,
+				F2EB54F12952F4AE001653B4 /* SecretView.swift in Sources */,
+				F2EB55142956C172001653B4 /* CloudkitHelpers.swift in Sources */,
 				F2EB550A29558FA9001653B4 /* KeychainStore.swift in Sources */,
+				F2EB5525295F1AC2001653B4 /* SecretManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +431,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -480,6 +493,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -569,6 +583,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "VespassMac/Preview\\ Content";
 				DEVELOPMENT_TEAM = GBVVFTJ5A2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -599,6 +614,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "VespassMac/Preview\\ Content";
 				DEVELOPMENT_TEAM = GBVVFTJ5A2;
 				ENABLE_HARDENED_RUNTIME = YES;

@@ -3,7 +3,7 @@
 //  Vespass
 //
 //  Created by Nalin Bhardwaj on 29/12/22.
-//  Copyright © 2022 Apple. All rights reserved.
+//  Copyright © 2022 Vespass. All rights reserved.
 //
 
 import Foundation
@@ -91,3 +91,5 @@ extension UUID {
         }
     }
 }
+
+extension String: Error {}
