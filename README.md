@@ -2,6 +2,8 @@
 
 ## A New Kind of Password Manager
 
+<img alt="Vespass" src="https://user-images.githubusercontent.com/6984346/224158081-52be46d0-dd3a-4b2a-ab37-4a84c93e80b6.png">
+
 I am unhappy with [the](https://twitter.com/matthew_d_green/status/1606037649625530368?s=20) [state](https://www.reddit.com/r/privacy/comments/7l75d5/comment/husrjl5/?utm_source=share&utm_medium=web2x&context=3) [of](https://twitter.com/dystopiabreaker/status/1606449079420342272?s=20) [commercial](https://dustri.org/b/the-quest-for-a-family-friendly-password-manager.html) [password](https://twitter.com/benjitaylor/status/1465813017560432643?s=20) [managers](https://rot256.dev/post/pass/) (every single word here links to a problem). Vespass is an uncompromising password manager with stronger security guarantees and lower friction than anything else on the market.
 
 Features:
