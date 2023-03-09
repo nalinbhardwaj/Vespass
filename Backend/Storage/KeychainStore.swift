@@ -9,7 +9,7 @@
 import Foundation
 import Security
 
-let KEYCHAIN_STORE_PREFIX = "com.nibnalin.vespass.keychain.debug."
+let KEYCHAIN_STORE_PREFIX = "com.nibnalin.vespass.keychain.demo.2."
 
 class KeyChain {
     class func save(key: String, data: Data) -> OSStatus {

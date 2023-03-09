@@ -77,7 +77,13 @@ struct ReassemblyView: View {
                     }
                 }).alert("Copy secret", isPresented: $didFinish, presenting: finishedSecret, actions: {
                     secret in Button("Copy") {
+                        #if os(iOS)
                         UIPasteboard.general.string = finishedSecret
+                        #else
+                        let pasteboard = NSPasteboard.general
+                        pasteboard.clearContents()
+                        pasteboard.setString(finishedSecret, forType: .string)
+                        #endif
                     }
                     Button("Close") {
                         finishedSecret = ""
