@@ -2,7 +2,7 @@
 
 ## A New Kind of Password Manager
 
-<img alt="Vespass" src="https://user-images.githubusercontent.com/6984346/224432008-c25e2135-5108-4ff2-a9f7-66b04a2fb276.png">
+<img alt="Vespass" src="https://user-images.githubusercontent.com/6984346/224560698-679dbe76-4238-4519-8c0a-1c93d83778b1.png">
 
 I am unhappy with [the](https://twitter.com/matthew_d_green/status/1606037649625530368?s=20) [state](https://www.reddit.com/r/privacy/comments/7l75d5/comment/husrjl5/?utm_source=share&utm_medium=web2x&context=3) [of](https://twitter.com/dystopiabreaker/status/1606449079420342272?s=20) [commercial](https://dustri.org/b/the-quest-for-a-family-friendly-password-manager.html) [password](https://twitter.com/benjitaylor/status/1465813017560432643?s=20) [managers](https://rot256.dev/post/pass/) (every single word here links to a problem). Vespass is an uncompromising password manager with stronger security guarantees and lower friction than anything else on the market.
 
@@ -59,6 +59,7 @@ If a [Vespa](https://web.archive.org/web/20010313020959/http://home.rol3.com/~u0
 
 Here's a WIP demo of the organs using the iOS and macOS app:
 
+https://user-images.githubusercontent.com/6984346/224560856-886b3ce3-3f54-428b-a15c-314f3f13e7ef.mp4
 
 Another way to put it is that Vespass is currently closer to an [eprint](https://eprint-sanity.com) protocol specification (code is the best spec) than it is to a usable product.
 
