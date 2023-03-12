@@ -60,5 +60,6 @@ If a [Vespa](https://web.archive.org/web/20010313020959/http://home.rol3.com/~u0
 Here's a WIP demo of the organs using the iOS and macOS app:
 
 
+Another way to put it is that Vespass is currently closer to an [eprint](https://eprint-sanity.com) protocol specification (code is the best spec) than it is to a usable product.
 
 Help me build the remainder of this motorcycle. [Reach out.](https://twitter.com/nibnalin)
